@@ -234,7 +234,10 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .fallback-icon {
@@ -242,12 +245,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Show fallback icon if image fails to load */
-.profile-image:not([src]), .profile-image[src=""] + .fallback-icon {
-    display: block;
+/* Hide fallback icon when image loads successfully */
+.profile-image[src]:not([src=""]) + .fallback-icon {
+    display: none;
 }
 
 /* Section Styles */

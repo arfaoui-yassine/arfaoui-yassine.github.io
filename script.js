@@ -4,6 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Handle profile image loading
+    const profileImage = document.querySelector('.profile-image');
+    const fallbackIcon = document.querySelector('.fallback-icon');
+    
+    if (profileImage && fallbackIcon) {
+        profileImage.onload = function() {
+            // Hide fallback icon when image loads successfully
+            fallbackIcon.style.display = 'none';
+        };
+        
+        profileImage.onerror = function() {
+            // Show fallback icon if image fails to load
+            fallbackIcon.style.display = 'flex';
+            profileImage.style.display = 'none';
+        };
+        
+        // Check if image is already loaded (cached)
+        if (profileImage.complete && profileImage.naturalHeight !== 0) {
+            fallbackIcon.style.display = 'none';
+        }
+    }
+
     // Toggle mobile menu
     navToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
