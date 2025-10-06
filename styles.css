@@ -183,6 +183,30 @@ body {
     line-height: 1.7;
 }
 
+.hero-badges {
+    margin: 0.75rem 0 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    background: linear-gradient(135deg, rgba(106, 90, 205, 0.12) 0%, rgba(138, 43, 226, 0.12) 100%);
+    border: 1px solid rgba(106, 90, 205, 0.25);
+    border-radius: 999px;
+}
+
+.badge i {
+    color: var(--primary-color);
+}
+
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -296,6 +320,14 @@ section {
     border-radius: 2px;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
 /* About Section */
 .about {
     background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
@@ -328,6 +360,31 @@ section {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.7;
+}
+
+.about-roles {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+}
+
+.about-roles li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-color);
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.about-roles i {
+    color: var(--primary-color);
+    margin-top: 2px;
 }
 
 .about-stats {
@@ -553,6 +610,14 @@ section {
     overflow: hidden;
 }
 
+/* Ensure screenshots (e.g., Mouzika, Mariage TN) are contained like the placeholder icons */
+.project-screenshot {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
 .project-image::before {
     content: '';
     position: absolute;
@@ -572,6 +637,11 @@ section {
     transition: all 0.3s ease;
     z-index: 1;
     position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-card:hover .project-placeholder {
